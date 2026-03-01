@@ -1,4 +1,4 @@
-import { useEffect, useId, useMemo, useState } from 'react'
+import { useEffect, useId, useState } from 'react'
 
 export type NavItem = {
   label: string
@@ -16,20 +16,32 @@ function cn(...classes: Array<string | false | null | undefined>) {
 }
 
 function MenuIcon({ open }: { open: boolean }) {
-  // ícone simples sem libs
   return (
     <svg
       aria-hidden="true"
       viewBox="0 0 24 24"
-      className={cn('h-6 w-6 transition-transform', open && 'rotate-90')}
+      className="h-6 w-6"
       fill="none"
       stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
     >
-      <path d="M4 6h16" />
-      <path d="M4 12h16" />
-      <path d="M4 18h16" />
+      <path
+        d="M4 7h16"
+        className={`transition-all duration-300 ${
+          open ? 'translate-y-[4px] rotate-40 origin-center' : ''
+        }`}
+      />
+      <path
+        d="M4 12h16"
+        className={`transition-all duration-300 ${open ? 'opacity-0' : 'opacity-100'}`}
+      />
+      <path
+        d="M4 17h16"
+        className={`transition-all duration-300 ${
+          open ? '-translate-y-[4px] -rotate-40 origin-center' : ''
+        }`}
+      />
     </svg>
   )
 }
@@ -37,12 +49,6 @@ function MenuIcon({ open }: { open: boolean }) {
 export function Navbar({ navItems, activeLabel = '', ariaLabel = 'Main navigation' }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false)
   const menuId = useId()
-
-  // fecha menu ao mudar de rota (porque onClick navega)
-  const activeIndex = useMemo(
-    () => navItems.findIndex((item) => item.label === activeLabel),
-    [activeLabel, navItems],
-  )
 
   useEffect(() => {
     if (!isOpen) return
@@ -82,7 +88,6 @@ export function Navbar({ navItems, activeLabel = '', ariaLabel = 'Main navigatio
         </button>
       </div>
 
-      {/* Desktop menu */}
       <div data-testid="desktop-menu" className="hidden md:block">
         <ul className="flex items-center gap-6">
           {navItems.map((item) => {
@@ -107,7 +112,6 @@ export function Navbar({ navItems, activeLabel = '', ariaLabel = 'Main navigatio
         </ul>
       </div>
 
-      {/* Mobile dropdown */}
       <div
         data-testid="mobile-menu"
         id={menuId}
@@ -142,13 +146,6 @@ export function Navbar({ navItems, activeLabel = '', ariaLabel = 'Main navigatio
             )
           })}
         </ul>
-
-        {/* opcional: indicador discreto */}
-        {activeIndex >= 0 ? (
-          <div className="border-t border-slate-100 px-3 py-2 text-xs text-slate-500">
-            Atual: <span className="font-medium text-slate-700">{activeLabel}</span>
-          </div>
-        ) : null}
       </div>
     </nav>
   )
