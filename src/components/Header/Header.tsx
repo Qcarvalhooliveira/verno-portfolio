@@ -55,7 +55,7 @@ export function Header({ logoSrc = '/Verno_logo.png' }: HeaderProps) {
   }
 
   return (
-    <header className="sticky top-0 z-30 w-full border-b border-gray-200 bg-white/90 backdrop-blur">
+    <header className="sticky top-0 z-30 w-full  bg-gradient-to-b from-highlights to-white">
       <div className="mx-auto flex max-w-screen-xl items-center justify-between p-3 sm:p-4 md:grid md:grid-cols-7 md:items-center">
         {/* Logo */}
         <div className="flex items-center md:col-span-2 md:justify-start">
