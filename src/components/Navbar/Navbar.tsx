@@ -75,7 +75,7 @@ export function Navbar({ navItems, activeLabel = '', ariaLabel = 'Main navigatio
           className={cn(
             'inline-flex h-10 w-10 items-center justify-center rounded-lg',
             'border border-transparent',
-            'text-slate-900',
+            'text-highlights',
             'hover:bg-slate-100',
             'focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400',
           )}
@@ -100,7 +100,7 @@ export function Navbar({ navItems, activeLabel = '', ariaLabel = 'Main navigatio
                   className={cn(
                     'rounded-md px-1 py-1 text-sm transition-colors',
                     'focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400',
-                    active ? 'font-semibold text-blue-700' : 'text-slate-900 hover:text-blue-700',
+                    active ? 'font-bold text-background' : 'text-background hover:text-hover',
                   )}
                   aria-current={active ? 'page' : undefined}
                 >

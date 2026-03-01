@@ -1,22 +1,19 @@
-import {
-  LinkedinLogoIcon,
-  WhatsappLogoIcon
-} from "@phosphor-icons/react";
+import { LinkedinLogoIcon, WhatsappLogoIcon } from '@phosphor-icons/react'
 
 export function Footer() {
   const handleLogoClick = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth",
-    });
-  };
-  const logoSrc = "/Verno_logo.png";
-  const brandName = "Verno Comunicação";
-  const year = new Date().getFullYear();
+      behavior: 'smooth',
+    })
+  }
+  const logoSrc = '/Verno_logo.png'
+  const brandName = 'Verno Comunicação'
+  const year = new Date().getFullYear()
 
   return (
     <footer
-      className="mt-auto bg-background text-highlights border-t border-slate-500/20"
+      className="mt-auto text-background bg-gradient-to-t from-highlights to-white"
       aria-label="Footer"
       data-testid="footer"
     >
@@ -33,7 +30,7 @@ export function Footer() {
               <img
                 src={logoSrc}
                 alt="Logo do verno"
-                className="h-8 w-auto object-contain sm:h-9 md:h-10"
+                className="h-20 w-auto object-contain sm:h-9 md:h-20"
                 loading="eager"
                 decoding="async"
               />
@@ -45,25 +42,22 @@ export function Footer() {
           className="hidden flex-col items-center text-center gap-1 sm:flex"
           data-testid="center-div"
         >
-          <span className="text-sm font-bold md:text-base text-highlights">{brandName}</span>
-         
-          <span className="text-[0.7rem] text-highlights md:text-xs">
+          <span className="text-sm font-bold md:text-base text-background">{brandName}</span>
+
+          <span className="text-[0.7rem] text-background md:text-xs">
             © {year}. Todos os direitos reservados.
           </span>
         </div>
 
         <div className="flex flex-col items-center gap-3 md:items-end w-35">
-          <nav
-            aria-label="Redes sociais"
-            className="flex items-center justify-center gap-4"
-          >
+          <nav aria-label="Redes sociais" className="flex items-center justify-center gap-4">
             <a
               href="https://www.linkedin.com/"
               target="_blank"
               rel="noreferrer"
               className={`
                 inline-flex items-center justify-center rounded-full
-                text-highlight hover:text-hover
+                text-background hover:text-hover
                 transition-colors duration-200
                 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900
               `}
@@ -78,7 +72,7 @@ export function Footer() {
               rel="noreferrer"
               className={`
                 inline-flex items-center justify-center rounded-full
-                text-slate-200 hover:text-hover
+                text-background hover:text-hover
                 transition-colors duration-200
                 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900
               `}
@@ -93,5 +87,5 @@ export function Footer() {
         © {year}. Todos os direitos reservados.
       </span>
     </footer>
-  );
+  )
 }
