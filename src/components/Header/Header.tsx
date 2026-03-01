@@ -70,7 +70,7 @@ export function Header({ logoSrc = '/Verno_logo.png' }: HeaderProps) {
               <img
                 src={logoSrc}
                 alt="Logo Verno"
-                className="h-7 w-auto object-contain sm:h-8 md:h-10"
+                className="h-20 w-auto object-contain sm:h-8 md:h-20"
                 loading="eager"
                 decoding="async"
               />
