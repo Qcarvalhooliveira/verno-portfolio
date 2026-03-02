@@ -1,14 +1,26 @@
 import { Link } from 'react-router-dom'
 
+import { Footer } from '../components/Footer/Footer'
+import { Header } from '../components/Header/Header'
+
 export function NotFound() {
   return (
-    <main className="min-h-screen p-6">
-      <h1 className="text-3xl font-bold">404</h1>
-      <p className="mt-2 text-neutral-600">Página não encontrada.</p>
-
-      <Link className="mt-6 inline-block underline" to="/">
-        Voltar para Home
-      </Link>
-    </main>
+    <div className="flex min-h-screen flex-col">
+      <Header />
+      <main className="flex flex-1 flex-col items-center justify-center text-center">
+        <img
+          src="/not_found_page.png"
+          alt="Página não encontrada - erro 404"
+          className="mx-auto max-w-md"
+        />
+        <Link
+          className="mt-10 mb-8 inline-block rounded-xl bg-blue-600 px-6 py-2 text-white hover:bg-blue-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
+          to="/inicio"
+        >
+          Voltar para Home
+        </Link>
+      </main>
+      <Footer />
+    </div>
   )
 }
