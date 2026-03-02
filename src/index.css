@@ -1,28 +1,28 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background:#2E73B8;
-  --color-background-from:#6c85a3;
-  --color-highlights:#DDE3EA;
-  --color-hover: #BFCAD6;
+  --color-background: #2e73b8;
+  --color-background-from: #6c85a3;
+  --color-highlights: #dde3ea;
+  --color-hover: #bfcad6;
 }
 
 .swiper-pagination {
-  position: absolute; 
-  bottom: 10px;        
+  position: absolute;
+  bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
   display: flex !important;
   justify-content: center !important;
   gap: 6px !important;
   pointer-events: auto;
-  z-index: 10; 
+  z-index: 10;
 }
 
 .swiper-pagination-bullet {
   width: 10px;
   height: 10px;
-  background-color: #DDE3EA;
+  background-color: #dde3ea;
   border-radius: 9999px;
   transition: all 0.3s;
 }
@@ -30,5 +30,29 @@
 .swiper-pagination-bullet-active {
   width: 15px;
   height: 15px;
-  background-color: #157EE2;
+  background-color: #157ee2;
+}
+
+.home-glass-button {
+  all: unset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 30px rgba(21, 5, 141, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(36, 17, 158, 0.2);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.home-glass-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 40px rgba(0, 119, 255, 0.3);
 }
