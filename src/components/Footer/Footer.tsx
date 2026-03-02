@@ -1,5 +1,5 @@
 import { LinkedinLogoIcon, WhatsappLogoIcon } from '@phosphor-icons/react'
-
+//TODO colocar o email no footer tambem
 export function Footer() {
   const handleLogoClick = () => {
     window.scrollTo({
@@ -13,7 +13,7 @@ export function Footer() {
 
   return (
     <footer
-      className="mt-auto text-background bg-gradient-to-t from-highlights to-white"
+      className="mt-auto text-background bg-linear-to-t from-highlights to-white"
       aria-label="Footer"
       data-testid="footer"
     >
