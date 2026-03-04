@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react'
 import { Caroussel, type Slide } from '../components/Caroussel/Caroussel'
 import { Footer } from '../components/Footer/Footer'
 import { Header } from '../components/Header/Header'
-//TODO na aba da pagina mudar o nome para verno comunicação e não verno portfolio
 
 export function Home() {
   const [slides, setSlides] = useState<Slide[]>([])
