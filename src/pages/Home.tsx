@@ -41,7 +41,6 @@ export function Home() {
 
       <main className="flex flex-1 flex-col items-center justify-center gap-6">
         <p className="text-neutral-600 text-lg">Bem-vindos ao Verno Portfolio.</p>
-
         {slides.length > 0 ? (
           <div className="w-1/2">
             <Caroussel slides={slides} />
@@ -49,13 +48,13 @@ export function Home() {
         ) : (
           <p>Carregando slides...</p>
         )}
-        <section className="flex flex-col ml-10 w-full items-center">
-          <a href="/servicos">
-            <h2 className="text-3xl tracking-widest uppercase bold font-serif bg-slate-950 text-amber-50 w-fit">
+        <section className="flex flex-col w-full items-center ml-15">
+          <a href="/servicos" className="w-full border-b shadow-2xl px-10">
+            <h2 className="text-3xl tracking-widest uppercase bold font-serif bg- text-slate-950 ">
               Nossos serviços
             </h2>
           </a>
-          <div className="flex gap-30">
+          <div className="flex gap-30 pt-3">
             <div className="flex flex-col justify-between gap-7 py-5 ">
               <ServiceStamp name="Design Editorial" href="/servicos#edicao" delay={0} />
 
