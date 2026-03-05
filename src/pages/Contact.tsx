@@ -4,7 +4,7 @@ import { Footer } from '../components/Footer/Footer'
 import { Header } from '../components/Header/Header'
 
 export function Contact() {
-  const email = 'vernocomunicacao@gmail.com'
+  const email = 'verno@gmail.com'
   const subject = encodeURIComponent('Contato pelo site - Verno Comunicações')
   const body = encodeURIComponent(`Bom dia,
 
