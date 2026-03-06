@@ -50,7 +50,7 @@ Atenciosamente,
       duration-300
     "
     >
-      <h3 className="font-serif text-2xl uppercase tracking-wide">{serviceName}</h3>
+      <h3 className="font-serif text-2xl uppercase tracking-wide text-center">{serviceName}</h3>
 
       <OrnamentalSeparator />
 
