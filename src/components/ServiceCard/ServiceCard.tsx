@@ -38,7 +38,6 @@ Atenciosamente,
       bg-old_paper
       flex flex-col
       rounded-md
-      w-md
       p-6
       gap-4
       border
