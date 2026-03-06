@@ -1,0 +1,39 @@
+export function OrnamentalSeparator() {
+  return (
+    <div className="flex items-center justify-center gap-5">
+      <img
+        src="/roloIcon.png"
+        alt="icon"
+        className="
+        rotate-90
+            w-8
+            transition-transform
+            duration-700
+            group-hover:rotate-450
+          "
+      />
+      <img
+        src="/roloIcon.png"
+        alt="icon"
+        className="
+        rotate-90
+            w-8
+            transition-transform
+            duration-900
+            group-hover:rotate-450
+          "
+      />
+      <img
+        src="/roloIcon.png"
+        alt="icon"
+        className="
+        rotate-90
+            w-8
+            transition-transform
+            duration-1100
+            group-hover:rotate-450
+          "
+      />
+    </div>
+  );
+}
