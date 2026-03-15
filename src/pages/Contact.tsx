@@ -27,8 +27,9 @@ Atenciosamente,
   return (
     <div className="flex min-h-screen flex-col ">
       <Header />
+      <h2 className="text-3xl tracking-widest uppercase font-bold text-center">Contato</h2>
       <main className="flex flex-col items-center justify-center">
-        <div className="w-4xl p-10 mt-16">
+        <div className="w-4xl p-10 mt-8">
           <p className="text-justify">
             Na Verno Comunicações, transformamos ideias em publicações que comunicam com clareza,
             estética e propósito. Se você busca serviços de edição, revisão, diagramação ou
