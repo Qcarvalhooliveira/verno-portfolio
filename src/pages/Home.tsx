@@ -1,14 +1,32 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 
 import { Caroussel, type Slide } from '../components/Caroussel/Caroussel'
 import { Footer } from '../components/Footer/Footer'
 import { Header } from '../components/Header/Header'
 import { ServiceStamp } from '../components/ServiceStamp/ServiceStamp'
 import vernoLogo from '/Verno_logo_home.png'
-//TODO na aba da pagina mudar o nome para verno comunicação e não verno portfolio *Feito
 
 export function Home() {
   const [slides, setSlides] = useState<Slide[]>([])
+  const servicesRef = useRef<HTMLElement | null>(null)
+  const [inView, setInView] = useState(false)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setInView(entry.isIntersecting)
+      },
+      {
+        threshold: 0.3,
+      },
+    )
+
+    if (servicesRef.current) {
+      observer.observe(servicesRef.current)
+    }
+
+    return () => observer.disconnect()
+  }, [])
 
   useEffect(() => {
     const fetchedSlides: Slide[] = [
@@ -68,7 +86,7 @@ export function Home() {
             <img
               src={vernoLogo}
               alt="Logo Verno estilo tipografia antiga"
-              className="max-h-[420px] w-auto object-contain"
+              className="max-h-105 w-auto object-contain"
             />
           </div>
         </div>
@@ -83,7 +101,7 @@ export function Home() {
         ) : (
           <p>Carregando slides...</p>
         )}
-        <section className="flex flex-col w-full items-center ml-15">
+        <section ref={servicesRef} className="flex flex-col w-full items-center ml-15">
           <a href="/servicos" className="w-full border-b shadow-2xl px-10">
             <h2 className="text-3xl tracking-widest uppercase bold font-serif bg- text-slate-950 ">
               Nossos serviços
@@ -91,28 +109,55 @@ export function Home() {
           </a>
           <div className="flex gap-30 pt-3">
             <div className="flex flex-col justify-between gap-7 py-5 ">
-              <ServiceStamp name="Design Editorial" href="/servicos#edicao" delay={0} />
+              <ServiceStamp
+                name="Design Editorial"
+                href="/servicos#edicao"
+                delay={0}
+                start={inView}
+              />
 
-              <ServiceStamp name="Planejamento Gráfico" href="/servicos#revisao" delay={200} />
+              <ServiceStamp
+                name="Planejamento Gráfico"
+                href="/servicos#revisao"
+                delay={200}
+                start={inView}
+              />
 
               <ServiceStamp
                 name="Diagramação Profissional"
                 href="/servicos#diagramação"
                 delay={400}
+                start={inView}
               />
             </div>
             <div className="flex flex-col justify-between gap-7 py-5">
-              <ServiceStamp name="Edição de Arte" href="/servicos#edição" delay={0} />
+              <ServiceStamp
+                name="Edição de Arte"
+                href="/servicos#edição"
+                delay={0}
+                start={inView}
+              />
 
-              <ServiceStamp name="Produção gráfica" href="/servicos#gráfica" delay={200} />
+              <ServiceStamp
+                name="Produção gráfica"
+                href="/servicos#gráfica"
+                delay={200}
+                start={inView}
+              />
 
               <ServiceStamp
                 name="Produção de Publicações"
                 href="/servicos#publicações"
                 delay={400}
+                start={inView}
               />
 
-              <ServiceStamp name="Desenvolvimento de E-books" href="/servicos#ebooks" delay={600} />
+              <ServiceStamp
+                name="Desenvolvimento de E-books"
+                href="/servicos#ebooks"
+                delay={600}
+                start={inView}
+              />
             </div>
           </div>
         </section>
