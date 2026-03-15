@@ -1,11 +1,14 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
+  --font-sans: 'Raleway', sans-serif;
+  --font-serif: 'Playfair Display', serif;
+
   --color-background: #2e73b8;
   --color-background-from: #6c85a3;
   --color-highlights: #dde3ea;
   --color-hover: #bfcad6;
-  --color-old_paper: #F1E9D2;
+  --color-old_paper: #f1e9d2;
 }
 
 .swiper-pagination {
@@ -83,7 +86,6 @@
     width: 101%;
   }
 }
-
 
 @keyframes roller-move {
   0% {
