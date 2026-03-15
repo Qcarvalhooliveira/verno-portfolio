@@ -3,8 +3,8 @@ import { useEffect, useState } from 'react'
 import { Caroussel, type Slide } from '../components/Caroussel/Caroussel'
 import { Footer } from '../components/Footer/Footer'
 import { Header } from '../components/Header/Header'
-import vernoLogo from '/Verno_logo_home.png'
 import { ServiceStamp } from '../components/ServiceStamp/ServiceStamp'
+import vernoLogo from '/Verno_logo_home.png'
 //TODO na aba da pagina mudar o nome para verno comunicação e não verno portfolio *Feito
 
 export function Home() {
@@ -43,12 +43,12 @@ export function Home() {
       <section className="mx-auto w-full px-6 py-16">
         <div className="flex item-center justify-center gap-10">
           {/* Card Sobre Nós */}
-          <div className="rounded-2xl h-fit w-md border border-neutral-200 mt-16 bg-white p-8 shadow-sm">
+          <div className="rounded-2xl h-fit w-md border border-neutral-200 mt-16 bg-old_paper p-8 shadow-xl">
             <h2 className="mb-4 font-serif text-2xl tracking-widest text-slate-950 uppercase">
               Sobre nós
             </h2>
 
-            <p className="mb-6 text-neutral-600 leading-relaxed">
+            <p className="mb-6 text-neutral-600 leading-relaxed text-justify">
               A Verno é especializada em design gráfico e editorial, desenvolvendo projetos que unem
               estética, legibilidade e identidade visual. Trabalhamos com diagramação, produção
               editorial e planejamento gráfico para transformar conteúdo em experiências visuais
