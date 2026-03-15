@@ -9,12 +9,6 @@ export function Services() {
 
       <h2 className="text-3xl tracking-widest uppercase font-bold text-center">Nossos Serviços</h2>
 
-      <img
-        src="/servicos-image.png"
-        alt="cover image for services"
-        className="mx-auto md:w-2xl w-xl"
-      />
-
       <section className="mx-auto mt-10 grid w-full max-w-5xl grid-cols-1 gap-10 px-4 md:grid-cols-2">
         <div className="last:md:col-span-2">
           <ServiceCard
@@ -65,6 +59,11 @@ export function Services() {
           />
         </div>
       </section>
+      <img
+        src="/servicos-image.png"
+        alt="cover image for services"
+        className="mx-auto md:w-2xl w-xl"
+      />
 
       <Footer />
     </div>
