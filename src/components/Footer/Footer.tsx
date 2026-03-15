@@ -1,6 +1,10 @@
-import { LinkedinLogoIcon, WhatsappLogoIcon } from '@phosphor-icons/react'
-//TODO colocar o email no footer tambem
+import { EnvelopeIcon, LinkedinLogoIcon, WhatsappLogoIcon } from '@phosphor-icons/react'
+
 export function Footer() {
+  const email = 'verno@gmail.com'
+  const subject = encodeURIComponent('Contato pelo site - Verno Comunicações')
+  const mailtoLink = `mailto:${email}?subject=${subject}`
+
   const handleLogoClick = () => {
     window.scrollTo({
       top: 0,
@@ -51,6 +55,22 @@ export function Footer() {
 
         <div className="flex flex-col items-center gap-3 md:items-end w-35">
           <nav aria-label="Redes sociais" className="flex items-center justify-center gap-4">
+
+            <a
+              href={mailtoLink}
+              target="_blank"
+              rel="noreferrer"
+              className={`
+                inline-flex items-center justify-center rounded-full
+                text-background hover:text-hover
+                transition-colors duration-200
+                focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900
+              `}
+            >
+              <EnvelopeIcon size={32} weight="fill" aria-hidden="true" />
+              <span className="sr-only">Email</span>
+            </a>
+
             <a
               href="https://www.linkedin.com/"
               target="_blank"

@@ -5,6 +5,7 @@
   --color-background-from: #6c85a3;
   --color-highlights: #dde3ea;
   --color-hover: #bfcad6;
+  --color-old_paper: #F1E9D2;
 }
 
 .swiper-pagination {
@@ -55,4 +56,50 @@
 .home-glass-button:hover {
   transform: scale(1.05);
   box-shadow: 0 6px 40px rgba(0, 119, 255, 0.3);
+}
+.service-text {
+  position: relative;
+  color: transparent;
+}
+
+.service-text::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  color: #000;
+  -webkit-text-stroke: 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+@keyframes text-fill {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 101%;
+  }
+}
+
+
+@keyframes roller-move {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: calc(100% + 0.1rem);
+  }
+}
+
+@layer utilities {
+  .animate-text-fill::before {
+    animation: text-fill 3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  .animate-roller-move {
+    animation: roller-move 3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
 }
