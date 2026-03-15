@@ -1,15 +1,14 @@
 // For more info, see https://github.com/storybookjs/eslint-plugin-storybook#configuration-flat-config-format
-import storybook from 'eslint-plugin-storybook';
+import storybook from 'eslint-plugin-storybook'
 
-import js from '@eslint/js';
-import eslintConfigPrettier from 'eslint-config-prettier';
-import importPlugin from 'eslint-plugin-import';
-import prettier from 'eslint-plugin-prettier'; // <= ADICIONE
-import react from 'eslint-plugin-react';
-import reactHooks from 'eslint-plugin-react-hooks';
-import reactRefresh from 'eslint-plugin-react-refresh';
-import globals from 'globals';
-import tseslint from 'typescript-eslint';
+import js from '@eslint/js'
+import eslintConfigPrettier from 'eslint-config-prettier'
+import importPlugin from 'eslint-plugin-import'
+import react from 'eslint-plugin-react'
+import reactHooks from 'eslint-plugin-react-hooks'
+import reactRefresh from 'eslint-plugin-react-refresh'
+import globals from 'globals'
+import tseslint from 'typescript-eslint'
 
 export default tseslint.config(
   {
@@ -45,25 +44,9 @@ export default tseslint.config(
       'react-hooks': reactHooks,
       'react-refresh': reactRefresh,
       import: importPlugin,
-      prettier, // <= ADICIONE
     },
     rules: {
       ...reactHooks.configs.recommended.rules,
-
-      // ==== Torna divergências do Prettier ERROS ESLint (vai sublinhar) ====
-      'prettier/prettier': [
-        'error',
-        {
-          // espelha seu .prettierrc, para evitar qualquer ambiguidade
-          semi: false,
-          singleQuote: true,
-          trailingComma: 'all',
-          printWidth: 100,
-          // opcional, se quiser explicitar indentação:
-          tabWidth: 2,
-          useTabs: false,
-        },
-      ],
 
       'react-refresh/only-export-components': [
         'warn',
