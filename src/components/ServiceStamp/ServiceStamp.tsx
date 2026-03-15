@@ -5,16 +5,24 @@ import clsx from 'clsx'
 interface ServiceStampProps {
   name: string
   href: string
+  start: boolean
   delay?: number
 }
 
-export function ServiceStamp({ name, href, delay = 0 }: ServiceStampProps) {
-  const [start, setStart] = useState(false)
+export function ServiceStamp({ name, href, start, delay = 0 }: ServiceStampProps) {
+  const [animate, setAnimate] = useState(false)
 
   useEffect(() => {
-    const timer = setTimeout(() => setStart(true), delay)
+    let timer: ReturnType<typeof setTimeout>
+
+    if (start) {
+      timer = setTimeout(() => setAnimate(true), delay)
+    } else {
+      setAnimate(false)
+    }
+
     return () => clearTimeout(timer)
-  }, [delay])
+  }, [start, delay])
 
   return (
     <a href={href} className="relative inline-block w-fit">
@@ -22,7 +30,7 @@ export function ServiceStamp({ name, href, delay = 0 }: ServiceStampProps) {
         data-text={name}
         className={clsx(
           'service-text relative font-serif text-2xl uppercase',
-          start && 'animate-text-fill',
+          animate && 'animate-text-fill',
         )}
       >
         {name}
@@ -33,7 +41,7 @@ export function ServiceStamp({ name, href, delay = 0 }: ServiceStampProps) {
         alt="rolo"
         className={clsx(
           'absolute left-0 top-1/2 -translate-y-1/2 w-16 pointer-events-none',
-          start && 'animate-roller-move',
+          animate && 'animate-roller-move',
         )}
       />
     </a>
