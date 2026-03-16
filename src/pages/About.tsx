@@ -14,7 +14,7 @@ export function About() {
             detalhes para transformar conteúdo em experiências visuais elegantes e bem estruturadas.
           </p>
         </div>
-        <img src="/about_us.png" alt="Sobre Nos" className="mx-auto max-w-2xl " />
+        <img src="/about_us.jpg" alt="Sobre Nos" className="mx-auto max-w-2xl " />
       </main>
       <Footer />
     </div>

@@ -60,7 +60,7 @@ export function Services() {
         </div>
       </section>
       <img
-        src="/servicos-image.png"
+        src="/servicos-image.jpg"
         alt="cover image for services"
         className="mx-auto md:w-2xl w-xl"
       />

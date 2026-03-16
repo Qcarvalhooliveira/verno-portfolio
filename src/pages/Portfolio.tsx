@@ -6,20 +6,62 @@ import { PortfolioCard } from '../components/PortfolioCard/PortfolioCard'
 export function Portfolio() {
   const revistaAngolaSlides: Slide[] = [
     {
-      imgSrc: '/public/revistaAngola/RevistaAngola1.png',
+      imgSrc: '/public/revistaAngola/RevistaAngola1.jpg',
       name: 'revista angola slide 1',
     },
     {
-      imgSrc: '/public/revistaAngola/RevistaAngola2.png',
+      imgSrc: '/public/revistaAngola/RevistaAngola2.jpg',
       name: 'revista angola slide 2',
     },
     {
-      imgSrc: '/public/revistaAngola/RevistaAngola3.png',
+      imgSrc: '/public/revistaAngola/RevistaAngola3.jpg',
       name: 'revista angola slide 3',
     },
     {
-      imgSrc: '/public/revistaAngola/RevistaAngola6.png',
+      imgSrc: '/public/revistaAngola/RevistaAngola6.jpg',
       name: 'revista angola slide 4',
+    },
+  ]
+  const livroEvaSlides: Slide[] = [
+    {
+      imgSrc: '/public/livroEva/LivroEva1.jpg',
+      name: 'livro eva slide 1',
+    },
+    {
+      imgSrc: '/public/livroEva/LivroEva2.jpg',
+      name: 'livro eva slide 2',
+    },
+    {
+      imgSrc: '/public/livroEva/LivroEva3.jpg',
+      name: 'livro eva slide 3',
+    },
+    {
+      imgSrc: '/public/livroEva/LivroEva4.jpg',
+      name: 'livro eva slide 4',
+    },
+    {
+      imgSrc: '/public/livroEva/LivroEva5.jpg',
+      name: 'livro eva slide 5',
+    },
+    {
+      imgSrc: '/public/livroEva/LivroEva6.jpg',
+      name: 'livro eva slide 6',
+    },
+    {
+      imgSrc: '/public/livroEva/LivroEva7.jpg',
+      name: 'livro eva slide 7',
+    },
+    {
+      imgSrc: '/public/livroEva/LivroEva8.jpg',
+      name: 'livro eva slide 8',
+    },
+    {
+      imgSrc: '/public/livroEva/LivroEva9.jpg',
+      name: 'livro eva slide 9',
+    },
+    {
+      imgSrc: '/public/livroEva/LivroEva11.jpg',
+      name: 'livro eva slide 11',
     },
   ]
   return (
@@ -37,9 +79,9 @@ export function Portfolio() {
         </div>
         <div>
           <PortfolioCard
-            slides={revistaAngolaSlides}
-            projectName="Revista Angola"
-            description="A Revista Angola foi um projeto editorial desenvolvido para o Governo de Angola, com o objetivo de valorizar a cultura, o desenvolvimento e as potencialidades do país. A publicação reuniu conteúdos institucionais, reportagens e elementos visuais que destacam a identidade angolana. A nossa equipa foi responsável pela conceção editorial, design gráfico e coordenação de produção. O projeto procurou combinar informação, estética e estratégia de comunicação institucional. O resultado é uma revista que comunica Angola de forma moderna, clara e representativa."
+            slides={livroEvaSlides}
+            projectName="Livro Eva"
+            description="O livro da Banda Eva foi um projeto editorial dedicado a celebrar a trajetória de uma das bandas mais marcantes do axé music da Bahia. A publicação reúne histórias, momentos importantes da carreira, imagens e elementos visuais que destacam a identidade musical e cultural do grupo. A nossa equipa foi responsável pela conceção editorial, design gráfico e organização do conteúdo. O projeto procurou combinar memória, estética e narrativa musical. O resultado é um livro que apresenta a Banda Eva de forma envolvente, clara e representativa."
           />
         </div>
         <div>
@@ -51,9 +93,9 @@ export function Portfolio() {
         </div>
         <div>
           <PortfolioCard
-            slides={revistaAngolaSlides}
-            projectName="Revista Angola"
-            description="A Revista Angola foi um projeto editorial desenvolvido para o Governo de Angola, com o objetivo de valorizar a cultura, o desenvolvimento e as potencialidades do país. A publicação reuniu conteúdos institucionais, reportagens e elementos visuais que destacam a identidade angolana. A nossa equipa foi responsável pela conceção editorial, design gráfico e coordenação de produção. O projeto procurou combinar informação, estética e estratégia de comunicação institucional. O resultado é uma revista que comunica Angola de forma moderna, clara e representativa."
+            slides={livroEvaSlides}
+            projectName="Livro Eva"
+            description="O livro da Banda Eva foi um projeto editorial dedicado a celebrar a trajetória de uma das bandas mais marcantes do axé music da Bahia. A publicação reúne histórias, momentos importantes da carreira, imagens e elementos visuais que destacam a identidade musical e cultural do grupo. A nossa equipa foi responsável pela conceção editorial, design gráfico e organização do conteúdo. O projeto procurou combinar memória, estética e narrativa musical. O resultado é um livro que apresenta a Banda Eva de forma envolvente, clara e representativa."
           />
         </div>
         <div>
@@ -65,7 +107,7 @@ export function Portfolio() {
         </div>
       </section>
       <img
-        src="/portfolio-image.png"
+        src="/portfolio-image.jpg"
         alt="cover image for portfolio"
         className="mx-auto md:w-2xl w-xl"
       />

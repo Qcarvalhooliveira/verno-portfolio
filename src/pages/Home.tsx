@@ -7,7 +7,6 @@ import { ServiceStamp } from '../components/ServiceStamp/ServiceStamp'
 import vernoLogo from '/Verno_logo_home.png'
 
 export function Home() {
-  const [slides, setSlides] = useState<Slide[]>([])
   const servicesRef = useRef<HTMLElement | null>(null)
   const [inView, setInView] = useState(false)
 
@@ -28,32 +27,63 @@ export function Home() {
     return () => observer.disconnect()
   }, [])
 
-  useEffect(() => {
-    const fetchedSlides: Slide[] = [
-      {
-        imgSrc: 'https://picsum.photos/800/600?random=1',
-        name: 'Paisagem',
-        destination: '/portfolio',
-      },
-      {
-        imgSrc: 'https://picsum.photos/800/600?random=2',
-        name: 'Cidade',
-        destination: '/about',
-      },
-      {
-        imgSrc: 'https://picsum.photos/800/600?random=3',
-        name: 'Natureza',
-        destination: '/services',
-      },
-      {
-        imgSrc: 'https://picsum.photos/800/600?random=4',
-        name: 'Arte',
-        destination: '/contact',
-      },
-    ]
-
-    setSlides(fetchedSlides)
-  }, [])
+  const slides: Slide[] = [
+    {
+      imgSrc: '/public/livroEva/LivroEva1.jpg',
+      name: 'livro eva slide 1',
+      destination: '/portfolio',
+    },
+    {
+      imgSrc: '/public/livroEva/LivroEva2.jpg',
+      name: 'livro eva slide 2',
+      destination: '/portfolio',
+    },
+    {
+      imgSrc: '/public/livroEva/LivroEva3.jpg',
+      name: 'livro eva slide 3',
+      destination: '/portfolio',
+    },
+    {
+      imgSrc: '/public/livroEva/LivroEva4.jpg',
+      name: 'livro eva slide 4',
+      destination: '/portfolio',
+    },
+    {
+      imgSrc: '/public/revistaAngola/RevistaAngola1.jpg',
+      name: 'revista angola slide 1',
+      destination: '/portfolio',
+    },
+    {
+      imgSrc: '/public/revistaAngola/RevistaAngola2.jpg',
+      name: 'revista angola slide 2',
+      destination: '/portfolio',
+    },
+    {
+      imgSrc: '/public/revistaAngola/RevistaAngola3.jpg',
+      name: 'revista angola slide 3',
+      destination: '/portfolio',
+    },
+    {
+      imgSrc: '/public/revistaAngola/RevistaAngola6.jpg',
+      name: 'revista angola slide 4',
+      destination: '/portfolio',
+    },
+    {
+      imgSrc: '/public/livroEva/LivroEva8.jpg',
+      name: 'livro eva slide 8',
+      destination: '/portfolio',
+    },
+    {
+      imgSrc: '/public/livroEva/LivroEva9.jpg',
+      name: 'livro eva slide 9',
+      destination: '/portfolio',
+    },
+    {
+      imgSrc: '/public/livroEva/LivroEva11.jpg',
+      name: 'livro eva slide 11',
+      destination: '/portfolio',
+    },
+  ]
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -75,7 +105,7 @@ export function Home() {
 
             <a
               href="/about"
-              className="inline-block rounded-xl bg-[#50575e] px-6 py-3 text-white transition hover:opacity-90"
+              className="text-center w-full inline-block rounded-xl bg-[#50575e] px-6 py-3 text-white transition hover:opacity-90"
             >
               Saiba mais
             </a>
@@ -93,17 +123,23 @@ export function Home() {
       </section>
 
       <main className="flex flex-1 flex-col items-center justify-center gap-6">
-        <p className="text-neutral-600 text-lg">Bem-vindos ao Verno Portfolio.</p>
-        {slides.length > 0 ? (
-          <div className="w-1/2">
-            <Caroussel slides={slides} />
-          </div>
-        ) : (
-          <p>Carregando slides...</p>
-        )}
-        <section ref={servicesRef} className="flex flex-col w-full items-center ml-15">
+        <section className="flex flex-col w-full items-center pl-15">
+          <a href="/portfolio" className="w-full border-b shadow-2xl px-10">
+            <h2 className="text-3xl tracking-widest uppercase bold font-serif text-slate-950 ">
+              Portfolio
+            </h2>
+          </a>
+          {slides.length > 0 ? (
+            <div className="w-7xl pt-7">
+              <Caroussel slides={slides} isInHome />
+            </div>
+          ) : (
+            <p>Carregando slides...</p>
+          )}
+        </section>
+        <section ref={servicesRef} className="flex flex-col w-full items-center pl-15">
           <a href="/servicos" className="w-full border-b shadow-2xl px-10">
-            <h2 className="text-3xl tracking-widest uppercase bold font-serif bg- text-slate-950 ">
+            <h2 className="text-3xl tracking-widest uppercase bold font-serif text-slate-950 ">
               Nossos serviços
             </h2>
           </a>
