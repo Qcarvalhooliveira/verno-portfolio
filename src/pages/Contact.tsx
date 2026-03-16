@@ -55,7 +55,7 @@ Atenciosamente,
             </a>
           </div>
         </section>
-        <img src="/contact-image.png" alt="ilustrative image of workers talking" className="h-80" />
+        <img src="/contact-image.jpg" alt="ilustrative image of workers talking" className="h-80" />
       </main>
       <Footer />
     </div>

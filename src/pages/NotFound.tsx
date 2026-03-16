@@ -9,7 +9,7 @@ export function NotFound() {
       <Header />
       <main className="flex flex-1 flex-col items-center justify-center text-center">
         <img
-          src="/notfound-image.png"
+          src="/notfound-image.jpg"
           alt="Página não encontrada - erro 404"
           className="mx-auto max-w-3xl "
         />
