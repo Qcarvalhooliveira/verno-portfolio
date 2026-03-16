@@ -60,7 +60,7 @@ export function Services() {
         </div>
       </section>
       <img
-        src="/servicos-image.jpg"
+        src={`${import.meta.env.BASE_URL}/servicos-image.jpg`}
         alt="cover image for services"
         className="mx-auto md:w-2xl w-xl"
       />

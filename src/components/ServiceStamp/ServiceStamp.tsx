@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 
 import clsx from 'clsx'
+import { Link } from 'react-router-dom'
 
 interface ServiceStampProps {
   name: string
@@ -25,7 +26,7 @@ export function ServiceStamp({ name, href, start, delay = 0 }: ServiceStampProps
   }, [start, delay])
 
   return (
-    <a href={href} className="relative inline-block w-fit">
+    <Link to={href} className="relative inline-block w-fit">
       <span
         data-text={name}
         className={clsx(
@@ -37,13 +38,13 @@ export function ServiceStamp({ name, href, start, delay = 0 }: ServiceStampProps
       </span>
 
       <img
-        src="/roloIcon.png"
+        src={`${import.meta.env.BASE_URL}/roloIcon.png`}
         alt="rolo"
         className={clsx(
           'absolute left-0 top-1/2 -translate-y-1/2 w-16 pointer-events-none',
           animate && 'animate-roller-move',
         )}
       />
-    </a>
+    </Link>
   )
 }

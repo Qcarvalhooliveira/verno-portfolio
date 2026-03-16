@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom'
 
-import { Footer } from "../components/Footer/Footer";
-import { Header } from "../components/Header/Header";
+import { Footer } from '../components/Footer/Footer'
+import { Header } from '../components/Header/Header'
 
 export function NotFound() {
   return (
@@ -9,7 +9,7 @@ export function NotFound() {
       <Header />
       <main className="flex flex-1 flex-col items-center justify-center text-center">
         <img
-          src="/notfound-image.jpg"
+          src={`${import.meta.env.BASE_URL}/notfound-image.jpg`}
           alt="Página não encontrada - erro 404"
           className="mx-auto max-w-3xl "
         />
@@ -23,5 +23,5 @@ export function NotFound() {
       </main>
       <Footer />
     </div>
-  );
+  )
 }

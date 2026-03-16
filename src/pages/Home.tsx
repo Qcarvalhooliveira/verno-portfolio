@@ -1,4 +1,6 @@
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
+
+import { Link } from 'react-router-dom'
 
 import { Caroussel, type Slide } from '../components/Caroussel/Caroussel'
 import { Footer } from '../components/Footer/Footer'
@@ -29,57 +31,57 @@ export function Home() {
 
   const slides: Slide[] = [
     {
-      imgSrc: '/public/livroEva/LivroEva1.jpg',
+      imgSrc: `${import.meta.env.BASE_URL}/livroEva/LivroEva1.jpg`,
       name: 'livro eva slide 1',
       destination: '/portfolio',
     },
     {
-      imgSrc: '/public/livroEva/LivroEva2.jpg',
+      imgSrc: `${import.meta.env.BASE_URL}/livroEva/LivroEva2.jpg`,
       name: 'livro eva slide 2',
       destination: '/portfolio',
     },
     {
-      imgSrc: '/public/livroEva/LivroEva3.jpg',
+      imgSrc: `${import.meta.env.BASE_URL}/livroEva/LivroEva3.jpg`,
       name: 'livro eva slide 3',
       destination: '/portfolio',
     },
     {
-      imgSrc: '/public/livroEva/LivroEva4.jpg',
+      imgSrc: `${import.meta.env.BASE_URL}/livroEva/LivroEva4.jpg`,
       name: 'livro eva slide 4',
       destination: '/portfolio',
     },
     {
-      imgSrc: '/public/revistaAngola/RevistaAngola1.jpg',
+      imgSrc: `${import.meta.env.BASE_URL}/revistaAngola/RevistaAngola1.jpg`,
       name: 'revista angola slide 1',
       destination: '/portfolio',
     },
     {
-      imgSrc: '/public/revistaAngola/RevistaAngola2.jpg',
+      imgSrc: `${import.meta.env.BASE_URL}/revistaAngola/RevistaAngola2.jpg`,
       name: 'revista angola slide 2',
       destination: '/portfolio',
     },
     {
-      imgSrc: '/public/revistaAngola/RevistaAngola3.jpg',
+      imgSrc: `${import.meta.env.BASE_URL}/revistaAngola/RevistaAngola3.jpg`,
       name: 'revista angola slide 3',
       destination: '/portfolio',
     },
     {
-      imgSrc: '/public/revistaAngola/RevistaAngola6.jpg',
+      imgSrc: `${import.meta.env.BASE_URL}/revistaAngola/RevistaAngola6.jpg`,
       name: 'revista angola slide 4',
       destination: '/portfolio',
     },
     {
-      imgSrc: '/public/livroEva/LivroEva8.jpg',
+      imgSrc: `${import.meta.env.BASE_URL}/livroEva/LivroEva8.jpg`,
       name: 'livro eva slide 8',
       destination: '/portfolio',
     },
     {
-      imgSrc: '/public/livroEva/LivroEva9.jpg',
+      imgSrc: `${import.meta.env.BASE_URL}/livroEva/LivroEva9.jpg`,
       name: 'livro eva slide 9',
       destination: '/portfolio',
     },
     {
-      imgSrc: '/public/livroEva/LivroEva11.jpg',
+      imgSrc: `${import.meta.env.BASE_URL}/livroEva/LivroEva11.jpg`,
       name: 'livro eva slide 11',
       destination: '/portfolio',
     },
@@ -103,12 +105,12 @@ export function Home() {
               claras e elegantes.
             </p>
 
-            <a
-              href="/about"
+            <Link
+              to="/about"
               className="text-center w-full inline-block rounded-xl bg-[#50575e] px-6 py-3 text-white transition hover:opacity-90"
             >
               Saiba mais
-            </a>
+            </Link>
           </div>
 
           {/* Imagem */}
@@ -124,11 +126,11 @@ export function Home() {
 
       <main className="flex flex-1 flex-col items-center justify-center gap-6">
         <section className="flex flex-col w-full items-center pl-15">
-          <a href="/portfolio" className="w-full border-b shadow-2xl px-10">
+          <Link to="/portfolio" className="w-full border-b shadow-2xl px-10">
             <h2 className="text-3xl tracking-widest uppercase bold font-serif text-slate-950 ">
               Portfolio
             </h2>
-          </a>
+          </Link>
           {slides.length > 0 ? (
             <div className="w-7xl pt-7">
               <Caroussel slides={slides} isInHome />
@@ -138,59 +140,44 @@ export function Home() {
           )}
         </section>
         <section ref={servicesRef} className="flex flex-col w-full items-center pl-15">
-          <a href="/servicos" className="w-full border-b shadow-2xl px-10">
+          <Link to="/services" className="w-full border-b shadow-2xl px-10">
             <h2 className="text-3xl tracking-widest uppercase bold font-serif text-slate-950 ">
               Nossos serviços
             </h2>
-          </a>
+          </Link>
           <div className="flex gap-30 pt-3">
             <div className="flex flex-col justify-between gap-7 py-5 ">
-              <ServiceStamp
-                name="Design Editorial"
-                href="/servicos#edicao"
-                delay={0}
-                start={inView}
-              />
+              <ServiceStamp name="Design Editorial" href="/services" delay={0} start={inView} />
 
               <ServiceStamp
                 name="Planejamento Gráfico"
-                href="/servicos#revisao"
+                href="/services"
                 delay={200}
                 start={inView}
               />
 
               <ServiceStamp
                 name="Diagramação Profissional"
-                href="/servicos#diagramação"
+                href="/services"
                 delay={400}
                 start={inView}
               />
             </div>
             <div className="flex flex-col justify-between gap-7 py-5">
-              <ServiceStamp
-                name="Edição de Arte"
-                href="/servicos#edição"
-                delay={0}
-                start={inView}
-              />
+              <ServiceStamp name="Edição de Arte" href="/services" delay={0} start={inView} />
 
-              <ServiceStamp
-                name="Produção gráfica"
-                href="/servicos#gráfica"
-                delay={200}
-                start={inView}
-              />
+              <ServiceStamp name="Produção gráfica" href="/services" delay={200} start={inView} />
 
               <ServiceStamp
                 name="Produção de Publicações"
-                href="/servicos#publicações"
+                href="/services"
                 delay={400}
                 start={inView}
               />
 
               <ServiceStamp
                 name="Desenvolvimento de E-books"
-                href="/servicos#ebooks"
+                href="/services"
                 delay={600}
                 start={inView}
               />

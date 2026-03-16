@@ -1,4 +1,5 @@
 import { EnvelopeIcon, LinkedinLogoIcon, WhatsappLogoIcon } from '@phosphor-icons/react'
+import { Link } from 'react-router-dom'
 
 export function Footer() {
   const email = 'verno@gmail.com'
@@ -55,9 +56,8 @@ export function Footer() {
 
         <div className="flex flex-col items-center gap-3 md:items-end w-35">
           <nav aria-label="Redes sociais" className="flex items-center justify-center gap-4">
-
-            <a
-              href={mailtoLink}
+            <Link
+              to={mailtoLink}
               target="_blank"
               rel="noreferrer"
               className={`
@@ -69,10 +69,10 @@ export function Footer() {
             >
               <EnvelopeIcon size={32} weight="fill" aria-hidden="true" />
               <span className="sr-only">Email</span>
-            </a>
+            </Link>
 
-            <a
-              href="https://www.linkedin.com/"
+            <Link
+              to="https://www.linkedin.com/"
               target="_blank"
               rel="noreferrer"
               className={`
@@ -84,10 +84,10 @@ export function Footer() {
             >
               <LinkedinLogoIcon size={32} weight="fill" aria-hidden="true" />
               <span className="sr-only">Linkedin</span>
-            </a>
+            </Link>
 
-            <a
-              href="https://wa.me/5571993060607"
+            <Link
+              to="https://wa.me/5571993060607"
               target="_blank"
               rel="noreferrer"
               className={`
@@ -99,7 +99,7 @@ export function Footer() {
             >
               <WhatsappLogoIcon size={32} weight="fill" aria-hidden="true" />
               <span className="sr-only">WhatsApp</span>
-            </a>
+            </Link>
           </nav>
         </div>
       </div>

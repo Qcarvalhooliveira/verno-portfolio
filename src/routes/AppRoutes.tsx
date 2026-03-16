@@ -7,37 +7,42 @@ import { NotFound } from '../pages/NotFound'
 import { Portfolio } from '../pages/Portfolio'
 import { Services } from '../pages/Services'
 
-export const router = createBrowserRouter([
+export const router = createBrowserRouter(
+  [
+    {
+      children: [
+        {
+          path: '/',
+          element: <Home />,
+        },
+        {
+          path: '/inicio',
+          element: <Home />,
+        },
+        {
+          path: '/about',
+          element: <About />,
+        },
+        {
+          path: '/portfolio',
+          element: <Portfolio />,
+        },
+        {
+          path: '/services',
+          element: <Services />,
+        },
+        {
+          path: '/contact',
+          element: <Contact />,
+        },
+      ],
+    },
+    {
+      path: '*',
+      element: <NotFound />,
+    },
+  ],
   {
-    children: [
-      {
-        path: '/',
-        element: <Home />,
-      },
-      {
-        path: '/inicio',
-        element: <Home />,
-      },
-      {
-        path: '/about',
-        element: <About />,
-      },
-      {
-        path: '/portfolio',
-        element: <Portfolio />,
-      },
-      {
-        path: '/services',
-        element: <Services />,
-      },
-      {
-        path: '/contact',
-        element: <Contact />,
-      },
-    ],
+    basename: import.meta.env.BASE_URL,
   },
-  {
-    path: '*',
-    element: <NotFound />,
-  },
-])
+)

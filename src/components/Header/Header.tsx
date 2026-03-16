@@ -8,7 +8,7 @@ export type HeaderProps = {
   logoSrc?: string
 }
 
-export function Header({ logoSrc = '/Verno_logo.png' }: HeaderProps) {
+export function Header({ logoSrc = `${import.meta.env.BASE_URL}Verno_logo.png` }: HeaderProps) {
   const navigate = useNavigate()
   const location = useLocation()
 

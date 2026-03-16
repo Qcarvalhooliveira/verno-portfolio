@@ -1,4 +1,5 @@
 import { EnvelopeIcon, WhatsappLogoIcon } from '@phosphor-icons/react'
+import { Link } from 'react-router-dom'
 
 import { OrnamentalSeparator } from '../OrnamentalSeparetor/OrnamentalSeparator'
 
@@ -56,8 +57,8 @@ Atenciosamente,
       <p className="text-sm leading-relaxed text-justify">{description}</p>
 
       <div className="flex justify-center mt-2 gap-5">
-        <a
-          href={whatsappLink}
+        <Link
+          to={whatsappLink}
           target="_blank"
           rel="noreferrer"
           className="
@@ -78,9 +79,9 @@ Atenciosamente,
         >
           Fale Conosco
           <WhatsappLogoIcon />
-        </a>
-        <a
-          href={mailtoLink}
+        </Link>
+        <Link
+          to={mailtoLink}
           target="_blank"
           rel="noreferrer"
           className="
@@ -101,7 +102,7 @@ Atenciosamente,
         >
           Fale Conosco
           <EnvelopeIcon />
-        </a>
+        </Link>
       </div>
     </div>
   )

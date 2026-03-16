@@ -2,7 +2,7 @@ export function OrnamentalSeparator() {
   return (
     <div className="flex items-center justify-center gap-5">
       <img
-        src="/roloIcon.png"
+        src={`${import.meta.env.BASE_URL}/roloIcon.png`}
         alt="icon"
         className="
         rotate-90
@@ -13,7 +13,7 @@ export function OrnamentalSeparator() {
           "
       />
       <img
-        src="/roloIcon.png"
+        src={`${import.meta.env.BASE_URL}/roloIcon.png`}
         alt="icon"
         className="
         rotate-90
@@ -24,7 +24,7 @@ export function OrnamentalSeparator() {
           "
       />
       <img
-        src="/roloIcon.png"
+        src={`${import.meta.env.BASE_URL}/roloIcon.png`}
         alt="icon"
         className="
         rotate-90
@@ -35,5 +35,5 @@ export function OrnamentalSeparator() {
           "
       />
     </div>
-  );
+  )
 }

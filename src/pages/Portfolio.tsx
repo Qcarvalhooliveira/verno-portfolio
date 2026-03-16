@@ -6,61 +6,61 @@ import { PortfolioCard } from '../components/PortfolioCard/PortfolioCard'
 export function Portfolio() {
   const revistaAngolaSlides: Slide[] = [
     {
-      imgSrc: '/public/revistaAngola/RevistaAngola1.jpg',
+      imgSrc: `${import.meta.env.BASE_URL}/revistaAngola/RevistaAngola1.jpg`,
       name: 'revista angola slide 1',
     },
     {
-      imgSrc: '/public/revistaAngola/RevistaAngola2.jpg',
+      imgSrc: `${import.meta.env.BASE_URL}/revistaAngola/RevistaAngola2.jpg`,
       name: 'revista angola slide 2',
     },
     {
-      imgSrc: '/public/revistaAngola/RevistaAngola3.jpg',
+      imgSrc: `${import.meta.env.BASE_URL}/revistaAngola/RevistaAngola3.jpg`,
       name: 'revista angola slide 3',
     },
     {
-      imgSrc: '/public/revistaAngola/RevistaAngola6.jpg',
+      imgSrc: `${import.meta.env.BASE_URL}/revistaAngola/RevistaAngola6.jpg`,
       name: 'revista angola slide 4',
     },
   ]
   const livroEvaSlides: Slide[] = [
     {
-      imgSrc: '/public/livroEva/LivroEva1.jpg',
+      imgSrc: `${import.meta.env.BASE_URL}/livroEva/LivroEva1.jpg`,
       name: 'livro eva slide 1',
     },
     {
-      imgSrc: '/public/livroEva/LivroEva2.jpg',
+      imgSrc: `${import.meta.env.BASE_URL}/livroEva/LivroEva2.jpg`,
       name: 'livro eva slide 2',
     },
     {
-      imgSrc: '/public/livroEva/LivroEva3.jpg',
+      imgSrc: `${import.meta.env.BASE_URL}/livroEva/LivroEva3.jpg`,
       name: 'livro eva slide 3',
     },
     {
-      imgSrc: '/public/livroEva/LivroEva4.jpg',
+      imgSrc: `${import.meta.env.BASE_URL}/livroEva/LivroEva4.jpg`,
       name: 'livro eva slide 4',
     },
     {
-      imgSrc: '/public/livroEva/LivroEva5.jpg',
+      imgSrc: `${import.meta.env.BASE_URL}/livroEva/LivroEva5.jpg`,
       name: 'livro eva slide 5',
     },
     {
-      imgSrc: '/public/livroEva/LivroEva6.jpg',
+      imgSrc: `${import.meta.env.BASE_URL}/livroEva/LivroEva6.jpg`,
       name: 'livro eva slide 6',
     },
     {
-      imgSrc: '/public/livroEva/LivroEva7.jpg',
+      imgSrc: `${import.meta.env.BASE_URL}/livroEva/LivroEva7.jpg`,
       name: 'livro eva slide 7',
     },
     {
-      imgSrc: '/public/livroEva/LivroEva8.jpg',
+      imgSrc: `${import.meta.env.BASE_URL}/livroEva/LivroEva8.jpg`,
       name: 'livro eva slide 8',
     },
     {
-      imgSrc: '/public/livroEva/LivroEva9.jpg',
+      imgSrc: `${import.meta.env.BASE_URL}/livroEva/LivroEva9.jpg`,
       name: 'livro eva slide 9',
     },
     {
-      imgSrc: '/public/livroEva/LivroEva11.jpg',
+      imgSrc: `${import.meta.env.BASE_URL}/livroEva/LivroEva11.jpg`,
       name: 'livro eva slide 11',
     },
   ]
@@ -107,7 +107,7 @@ export function Portfolio() {
         </div>
       </section>
       <img
-        src="/portfolio-image.jpg"
+        src={`${import.meta.env.BASE_URL}portfolio-image.jpg`}
         alt="cover image for portfolio"
         className="mx-auto md:w-2xl w-xl"
       />

@@ -1,4 +1,5 @@
 import { EnvelopeIcon, LinkedinLogoIcon, WhatsappLogoIcon } from '@phosphor-icons/react'
+import { Link } from 'react-router-dom'
 
 import { Footer } from '../components/Footer/Footer'
 import { Header } from '../components/Header/Header'
@@ -39,23 +40,27 @@ Atenciosamente,
         </div>
         <section>
           <div className="flex gap-4">
-            <a className="home-glass-button" href={mailtoLink}>
+            <Link className="home-glass-button" to={mailtoLink}>
               <EnvelopeIcon size={50} weight="light" color="#157ee2" />
-            </a>
-            <a className="home-glass-button" href={whatsappLink} target="_blank" rel="noreferrer">
+            </Link>
+            <Link className="home-glass-button" to={whatsappLink} target="_blank" rel="noreferrer">
               <WhatsappLogoIcon size={50} weight="light" color="#157ee2" />
-            </a>
-            <a
+            </Link>
+            <Link
               className="home-glass-button"
-              href="https://www.linkedin.com/"
+              to="https://www.linkedin.com/"
               target="_blank"
               rel="noopener noreferrer"
             >
               <LinkedinLogoIcon size={50} weight="light" color="#157ee2" />
-            </a>
+            </Link>
           </div>
         </section>
-        <img src="/contact-image.jpg" alt="ilustrative image of workers talking" className="h-80" />
+        <img
+          src={`${import.meta.env.BASE_URL}/contact-image.jpg`}
+          alt="ilustrative image of workers talking"
+          className="h-80"
+        />
       </main>
       <Footer />
     </div>
