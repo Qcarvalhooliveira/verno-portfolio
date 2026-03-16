@@ -11,9 +11,10 @@ export type Slide = {
 
 type SliderProps = {
   slides: Slide[]
+  isInHome?: boolean
 }
 
-export function Caroussel({ slides }: SliderProps) {
+export function Caroussel({ slides, isInHome }: SliderProps) {
   const navigate = useNavigate()
   function handleNavigation(destination: string) {
     navigate(destination)
@@ -31,9 +32,13 @@ export function Caroussel({ slides }: SliderProps) {
           768: {
             slidesPerView: 2,
           },
-          1024: {
-            slidesPerView: 3,
-          },
+          1024: isInHome
+            ? {
+                slidesPerView: 8,
+              }
+            : {
+                slidesPerView: 3,
+              },
         }}
         navigation={false}
         pagination={{
@@ -50,7 +55,12 @@ export function Caroussel({ slides }: SliderProps) {
               className="w-full h-full cursor-pointer rounded-xl overflow-hidden"
               onClick={() => slide.destination && handleNavigation(slide.destination)}
             >
-              <img src={slide.imgSrc} alt={slide.name} className="w-full h-full object-cover" />
+              <img
+                src={slide.imgSrc}
+                alt={slide.name}
+                loading="lazy"
+                className="w-full h-full object-cover"
+              />
             </div>
           </SwiperSlide>
         ))}
